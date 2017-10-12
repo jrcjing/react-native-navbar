@@ -1,5 +1,10 @@
+import { Dimensions } from 'react-native';
+
 const NAV_BAR_HEIGHT = 44;
 const STATUS_BAR_HEIGHT = 20;
+
+const IPhoneX_NAVBAR_ADD_HEIGHT = 24;
+const isIPhoneX = Dimensions.get('window').height === 812;
 
 module.exports = {
   navBarContainer: {
@@ -9,7 +14,7 @@ module.exports = {
     height: STATUS_BAR_HEIGHT,
   },
   navBar: {
-    height: NAV_BAR_HEIGHT,
+    height: isIPhoneX ? NAV_BAR_HEIGHT + IPhoneX_NAVBAR_ADD_HEIGHT : NAV_BAR_HEIGHT,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'stretch',
@@ -25,6 +30,7 @@ module.exports = {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'stretch',
+    marginTop: isIPhoneX ? IPhoneX_NAVBAR_ADD_HEIGHT : 0,
   },
   navBarButton: {
     flexDirection: 'row',
@@ -39,7 +45,7 @@ module.exports = {
     position: 'absolute',
     left: 0,
     right: 0,
-    top: 0,
+    top: isIPhoneX ? IPhoneX_NAVBAR_ADD_HEIGHT : 0,
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
