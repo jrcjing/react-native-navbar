@@ -105,7 +105,7 @@ class NavigationBar extends Component {
     }
 
     return (
-      <View style={[styles.navBarContainer, customTintColor, ]}>
+      <View ref={(item) => { this.navBarContainer = item; }} style={[styles.navBarContainer, customTintColor, ]}>
         {statusBar}
         <View style={[styles.navBar, this.props.style, ]}>
           {this.getTitleElement(this.props.title)}
