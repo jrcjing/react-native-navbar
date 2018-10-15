@@ -4,7 +4,7 @@ const NAV_BAR_HEIGHT = 44;
 const STATUS_BAR_HEIGHT = 20;
 
 const IPhoneX_NAVBAR_ADD_HEIGHT = 24;
-const isIPhoneX = Dimensions.get('window').height === 812;
+const isIPhoneX = Dimensions.get('window').iPhoneXSeries; // Dimensions add iPhoneXSeries prop ("react-native": "https://github.com/yueshuaijie/react-native/raw/10896754c1335a9897789a115095d81199a20b88/react-native-0.30.0.tgz")
 
 module.exports = {
   navBarContainer: {
